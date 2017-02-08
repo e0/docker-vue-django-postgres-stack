@@ -1,6 +1,13 @@
 version: '2'
 
 services:
+  frontend:
+    build: ./frontend
+    command: npm run dev
+    volumes:
+      - ./frontend/src:/project/src
+    ports:
+      - "8080:8080"
   db:
     image: postgres
   backend:

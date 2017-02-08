@@ -1,5 +1,7 @@
 # Docker starter kit with Vue, Django REST framework, and PostgreSQL
-## Instructions (step per respective commit)
+## Instructions
+    `$ source proj.sh`
+## Tutorial, to learn the stack from scratch (step per respective commit)
 1. Starter kit.
 
 2. Create app, update database configuration, run.

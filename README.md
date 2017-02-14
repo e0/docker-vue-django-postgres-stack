@@ -23,5 +23,12 @@ DATABASES = {
 }
 ```
 
+Append the following into the `INSTALLED_APPS` section of the same file:
+
+```
+    'rest_framework',
+    'api',
+```
+
 `start-stack`
 

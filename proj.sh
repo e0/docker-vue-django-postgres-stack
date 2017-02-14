@@ -7,7 +7,7 @@ function bootstrap-backend {
         && cp -r backend/<PROJECT NAME>/* backend \
         && rm backend/<PROJECT NAME>/manage.py \
         && rm -rf backend/<PROJECT NAME>/<PROJECT NAME> \
-        && docker-compose run backend <PROJECT NAME>/manage.py startapp api
+        && docker-compose run backend ./manage.py startapp api
 }
 
 function bootstrap {

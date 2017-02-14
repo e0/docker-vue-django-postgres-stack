@@ -1,27 +1,27 @@
 # Docker starter kit with Vue, Django REST framework, and PostgreSQL
-## Instructions
-    `$ source proj.sh`
-## Tutorial, to learn the stack from scratch (step per respective commit)
-1. Starter kit.
+Download this repo and rename it after your project.
 
-2. Create app, update database configuration, run.
+Modify: `project.sh`
 
-    `$ docker-compose run backend django-admin.py startproject <PROJECT NAME> .`
+Modify: `frontend/packge.json`
 
-    Edit `backend/<PROJECT NAME>/settings.py`, replace the `DATABASES = ...` section with:
+Create main backend django app: `docker-compose run backend django-admin.py startproject <PROJECT NAME> .`
 
-    ```
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'postgres',
-            'USER': 'postgres',
-            'HOST': 'db',
-            'PORT': 5432,
-        }
+Edit `backend/<PROJECT NAME>/settings.py`, replace the `DATABASES = …` section with:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
     }
-    ```
-    
-    `$ docker-compose up`
+}
+```
 
-3. Add frontend.
+`docker-compose build`
+
+`docker-compose up`
+

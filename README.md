@@ -9,7 +9,7 @@ Modify: `frontend/packge.json`
 
 `bootstrap`
 
-Edit `backend/<PROJECT NAME>/settings.py`, replace the `DATABASES = …` section with:
+Edit `backend/<PROJECT NAME>/<PROJECT NAME>/settings.py`, replace the `DATABASES = …` section with:
 
 ```python
 DATABASES = {

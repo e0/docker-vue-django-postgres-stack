@@ -1,11 +1,13 @@
 # Docker starter kit with Vue, Django REST framework, and PostgreSQL
 Download this repo and rename it after your project.
 
-Modify: `project.sh`
+Modify: `project.sh`, replace `<PROJECT NAME>`
 
 Modify: `frontend/packge.json`
 
-Create main backend django app: `docker-compose run backend django-admin.py startproject <PROJECT NAME> .`
+`source proj.sh`
+
+`bootstrap`
 
 Edit `backend/<PROJECT NAME>/settings.py`, replace the `DATABASES = …` section with:
 
@@ -21,7 +23,5 @@ DATABASES = {
 }
 ```
 
-`docker-compose build`
-
-`docker-compose up`
+`start-stack`
 

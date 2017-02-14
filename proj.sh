@@ -4,7 +4,10 @@ function build-stack {
 
 function bootstrap-backend {
     docker-compose run backend django-admin.py startproject <PROJECT NAME> \
-    && docker-compose run backend <PROJECT NAME>/manage.py startapp api
+        && cp -r backend/<PROJECT NAME>/* backend \
+        && rm backend/<PROJECT NAME>/manage.py \
+        && rm -rf backend/<PROJECT NAME>/<PROJECT NAME> \
+        && docker-compose run backend <PROJECT NAME>/manage.py startapp api
 }
 
 function bootstrap {

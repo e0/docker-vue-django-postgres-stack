@@ -1,6 +1,25 @@
 version: '2'
 
 services:
+  db:
+    image: postgres
+    env_file: postgres.env
+    networks:
+      - net-tier
+
+  backend:
+    depends_on:
+      - db
+    env_file: postgres.env
+    build: ./backend
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/project
+    ports:
+      - "8000:8000"
+    networks:
+      - net-tier
+
   frontend:
     depends_on:
       - backend
@@ -10,22 +29,6 @@ services:
       - ./frontend/src:/project/src
     ports:
       - "8080:8080"
-    networks:
-      - net-tier
-  db:
-    image: postgres
-    networks:
-      - net-tier
-
-  backend:
-    depends_on:
-      - db
-    build: ./backend
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - ./backend:/project
-    ports:
-      - "8000:8000"
     networks:
       - net-tier
 
